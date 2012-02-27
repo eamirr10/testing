@@ -108,6 +108,7 @@ $(function() {
                         //alert("You should select a contact first");
                     if(isDuplicate(name)){
                         alert("Contact Already exists");
+                        emptyText();
                      }
                     else{
                         contactList.append('<li class="list-item" data-name= "' + name + '" data-phone= "' + phone + '" data-uid="' + id + '">' + name + ' ' + phone + '<a href="#" class="delete-button">Delete</a>' + '<p></p>' + '<a href="#" class="edit-button">Edit</a>' + '</li>');
@@ -129,9 +130,7 @@ $(function() {
                     }
                 });
                 SORTER.sort(contactList);
-                currId='';
-                $('#names').val('');
-                $('#phone').val('');
+
                 $('#save-contact-btn').text('Add Contact');
                 $.ajax({
                     //url: "/edit/",
@@ -141,6 +140,9 @@ $(function() {
                     dataType: "json"
                 }).done(function() {
                         alert("Contact edited");
+                        currId='';
+                        emptyText();
+                        disableText();
                     });
 
                 }
@@ -182,6 +184,17 @@ function enableText(){
     $('#phone').removeAttr("disabled");
 }
 
-function displayList(){
-
+function emptyText(){
+    $('#names').val('');
+    $('#phone').val('');
 }
+
+$(function() {
+    $('#add-contact-form').on('click', '#cancel-btn', function(event) {
+        event.preventDefault();
+        currId = '';
+        emptyText();
+        disableText();
+        $('#save-contact-btn').text('Add Contact');
+    });
+});

@@ -122,16 +122,6 @@
       padding:10px;
       margin-right:10px;
   }
-  #add-contact-btn{
-    background-color:#FF9900;
-    font-weight:bold;
-    font-family:Verdana, Arial, Helvetica, sans-serif;
-    border:1px solid #666666;
-    color:#000;
-    text-decoration:none;
-    padding:2px;
-    font-weight:bold;
-  }
   #save-contact-btn{
     background-color:#FF9900;
     font-weight:bold;

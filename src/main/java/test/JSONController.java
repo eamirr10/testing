@@ -53,7 +53,7 @@ static Map<String, Contact> myContacts = new HashMap<String, Contact>();
              return new ResponseEntity(HttpStatus.OK);
         }
         catch(Exception e){
-            return new ResponseEntity(HttpStatus.OK);
+            return new ResponseEntity(HttpStatus.BAD_REQUEST);
         }
     }
 

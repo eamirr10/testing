@@ -25,6 +25,7 @@
     <context:component-scan base-package="test" />
  	
  	<mvc:resources mapping="/resources/**" location="/resources/"/>
-	
+	<mvc:resources mapping="/javascript/**" location="/javascript/"/>
+	<mvc:resources mapping="/stylesheet/**" location="/stylesheet/"/>
 	<mvc:annotation-driven />
 </beans>

@@ -29,8 +29,9 @@
 			<artifactId>jstl</artifactId>
 			<version>1.2</version>
   	      </dependency>
+  	
   </dependencies>
   <build>
-    <finalName>testing</finalName>
+  		<finalName>testing</finalName>
   </build>
 </project>

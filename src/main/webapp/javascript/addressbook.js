@@ -1,6 +1,8 @@
 $(function(){
 	//code here...
 });
+
+//Should we have the current id always selected?
 var contactList="";
 var currId="";
 $(document).ready(function() {
@@ -22,9 +24,9 @@ $(document).ready(function() {
         });
 });
 
-	$(function() {
-		$('#get-contacts').on('click', function(event) {
-			event.preventDefault();	
+$(function() {
+	$('#get-contacts').on('click', function(event) {
+		event.preventDefault();
 
 			$.ajax({
 				url: "/contact",
@@ -39,15 +41,14 @@ $(document).ready(function() {
 					var a = contactList.append('<li class="list-item" data-name= "' +this.name + '" data-phone= "' +this.phoneNumber + '" data-uid="' + this.id + '">' + this.name + ' ' + this.phoneNumber + '<a href="#" class="delete-button">Delete</a>' + '<p></p>' + '<a href="#" class="edit-button">Edit</a>' + '</li>');
 
 				});
-                    SORTER.sort(contactList);
+                SORTER.sort(contactList);
 
 			});
 			
-		});	
 	});
-	
-	
-	$(function() {
+});
+
+$(function() {
 		$('#contact-list').on('click', '.delete-button', function(event) {
 			event.preventDefault();
 			
@@ -64,9 +65,9 @@ $(document).ready(function() {
 			});
 			
 		});	
-	});
+});
 	
-	$(function() {
+$(function() {
 		$('#contact-list').on('click', '.edit-button', function(event) {
 			event.preventDefault();
 
@@ -82,18 +83,9 @@ $(document).ready(function() {
             $('#save-contact-btn').text('Save Contact');
             //$('#add-contact-form').data('uid', uid) ;
             currId = uid;
-
-			$.ajax({
-				//url: "/contact/" + uid,
-				//data: 
-				//type: "PUT",
-				//dataType: "json"
-			}).done(function() {
-				//item.remove();
-			});
 			
 		});	
-	});
+});
 
 $(function() {
     $('#add-contact-form').on('click', '#save-contact-btn', function(event) {
@@ -157,7 +149,6 @@ $(function() {
 
     });
 });
-
 
 var SORTER = {};
 SORTER.sort = function(which) {

@@ -1,0 +1,144 @@
+    #logo {
+		padding:1em;
+	}
+	
+	#logo h1{
+		margin:0;
+	}
+	
+	h1 img {
+		width:100px;
+		height: 80px;
+	}
+	
+	body, html {
+		margin:0;
+		padding:0;
+		color:#000;
+		background:#0000;
+    }
+	
+	#wrap {
+		width:800px;
+		margin:10px auto;
+		background:#99c;
+    }
+	
+	nav{  /* use id instead of the tag so it does not look like a global variable in case we have more navigation tags */
+		background:#c99;
+	}
+	
+	nav ul
+	{
+		list-style-type:none;
+		margin:0;
+		padding:0;
+		overflow:hidden;
+	} 
+	
+	nav li
+	{
+		display:inline; /*This won't work because float: left will set the dispaly property of css to block. inline has no effect */
+		float: left;
+		margin-left:5px;
+	}
+	
+	nav li a {
+		background: url(/resources/images/menuItem.png) #fff bottom left repeat-x;
+		height:2em;
+		display:block;
+		width:100px;
+		line-height: 2em;
+		float: left; /* we don't use float on 'a'. Here it doesn't make any difference. We should do float only for nav li */
+		width: 5em;
+		border: 0.1em solid #dcdce9;
+		color: #0d2474;
+		text-decoration: none;
+		text-align: center;
+	}
+	
+	nav li a:hover {
+		background: url(/resources/images/menuHover.png) #fff bottom left repeat-x;
+	}
+	
+	.left-column{
+		float:left;
+		width:500px;
+		background:#9c9;
+		margin: 5px 0px 5px 5px;
+	}
+	
+	.right-column{
+		float:right;
+		width:250px;
+		background:#c9c;
+		margin: 5px 5px 5px 0px;
+	}
+	
+	#left-content{	
+		padding-left:5px;
+		padding-bottom: 10px;
+	}
+	
+	#bottom-content{	
+		padding-left:5px;
+	}
+	
+	#right-content{	
+		padding-left:5px;
+	}
+	
+	#list-title{ 
+              color:#FFFFFF; 
+              font-weight:bold; 
+              font-size:14px; 
+              font-family:Arial, Helvetica, sans-serif; 
+              margin-top:10px; 
+	} 
+	#contacts-lists{ 
+              color:#FF6600; 
+              font-weight:bold; 
+              font-family:Verdana, Arial, Helvetica, sans-serif; 
+              font-size:12px; 
+	} 
+	
+	
+	#footer {
+		clear: both;
+		background:#cc9;
+	}
+	
+	#footer p{
+		/* margin-left: 50%; never do this for aligning and use text-align instead */
+		text-align: center;
+	}
+
+    #add-contact-form{
+      color: #92ffe6;
+      font-weight:bold;
+      font-family:Verdana, Arial, Helvetica, sans-serif;
+      background-color: #123332;
+      margin-top:5px;
+      padding:10px;
+      margin-right:10px;
+  }
+  #add-contact-btn{
+    background-color:#FF9900;
+    font-weight:bold;
+    font-family:Verdana, Arial, Helvetica, sans-serif;
+    border:1px solid #666666;
+    color:#000;
+    text-decoration:none;
+    padding:2px;
+    font-weight:bold;
+  }
+  #save-contact-btn{
+    background-color:#FF9900;
+    font-weight:bold;
+    font-family:Verdana, Arial, Helvetica, sans-serif;
+    border:1px solid #666666;
+    color:#000;
+    text-decoration:none;
+    padding:2px;
+    font-weight:bold;
+  }

@@ -43,16 +43,18 @@ static Map<String, Contact> myContacts = new HashMap<String, Contact>();
 
     @RequestMapping(value="/edit/{uid}/{name}/{phoneNumber}", method = RequestMethod.PUT)
     public ResponseEntity editAContact(@PathVariable UUID uid,@PathVariable String name, @PathVariable int phoneNumber)   {
-        //@RequestParam("uid") String uid, @RequestParam("name") String name,@RequestParam("phoneNumber") int phoneNumber) {
-        
-        System.out.print(uid + name + phoneNumber);
-        Contact c = myContacts.get(uid.toString());
-        myContacts.remove(uid);
-        c.setName(name);
-        c.setPhoneNumber(phoneNumber);
-        myContacts.put(uid.toString(), c);
-        return new ResponseEntity(HttpStatus.OK);
-
+        try{
+             System.out.print(uid + name + phoneNumber);
+             Contact c = myContacts.get(uid.toString());
+             myContacts.remove(uid);
+             c.setName(name);
+             c.setPhoneNumber(phoneNumber);
+             myContacts.put(uid.toString(), c);
+             return new ResponseEntity(HttpStatus.OK);
+        }
+        catch(Exception e){
+            return new ResponseEntity(HttpStatus.OK);
+        }
     }
 
 	@RequestMapping(value="/contact/{uid}", method = RequestMethod.DELETE)
